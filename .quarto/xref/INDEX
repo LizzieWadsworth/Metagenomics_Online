@@ -4,5 +4,44 @@
   },
   "index.qmd": {
     "index.html": "47741a1b"
+  },
+  "copy_datasets.qmd": {
+    "copy_datasets.html": "28e82240"
+  },
+  "inspect_sequences.qmd": {
+    "inspect_sequences.html": "581e43ae"
+  },
+  "fastqc.qmd": {
+    "fastqc.html": "1de194a6"
+  },
+  "fastq.qmd": {
+    "fastq.html": "79ad0f01"
+  },
+  "fastqc_results.qmd": {
+    "fastqc_results.html": "e73c3cfb"
+  },
+  "multiqc.qmd": {
+    "multiqc.html": "4853119e"
+  },
+  "fastqc_thegraphs.qmd": {
+    "fastqc_thegraphs.html": "fe9bb4fe"
+  },
+  "multiqc_thegraphs.qmd": {
+    "multiqc_thegraphs.html": "a06a769a"
+  },
+  "Why_preprocess.qmd": {
+    "Why_preprocess.html": "756822c9"
+  },
+  "CutAdapt.qmd": {
+    "CutAdapt.html": "6041ea9c"
+  },
+  "BBmerge.qmd": {
+    "BBmerge.html": "02862276"
+  },
+  "FastQGroomer.qmd": {
+    "FastQGroomer.html": "4be8219d"
+  },
+  "QC_after_processing.qmd": {
+    "QC_after_processing.html": "be627f73"
   }
 }

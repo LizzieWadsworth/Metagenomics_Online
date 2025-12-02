@@ -3,11 +3,40 @@ project:
 
 website:
   title: "Metagenomics_Online"
+  page-navigation: true
+  bread-crumbs: false  
   sidebar:
     contents:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - section: "**Setting Up on Galaxy**"
+        contents: 
+          - about.qmd
+          - copy_datasets.qmd
+          - inspect_sequences.qmd
+      - section: "**Quality Control**"
+        contents: 
+          - href: fastq.qmd
+          - href: fastqc.qmd
+          - href: fastqc_results.qmd
+          - href: fastqc_thegraphs.qmd
+          - href: multiqc.qmd
+          - href: multiqc_thegraphs.qmd
+      - section: "**Preprocessing the reads**"
+        contents: 
+          - href: Why_preprocess.qmd
+          - href: CutAdapt.qmd
+          - href: BBmerge.qmd
+          - href: FastQGroomer.qmd 
+          - href: QC_after_processing.qmd 
+      - section: "**Classifying Taxonomy**"
+        contents: 
+          - href: Classifications_overview.qmd 
+          - href: kraken2.qmd
+          - href: Bracken.qmd
+          - href: Krakentools.qmd
+          - href: KronaPieChart.qmd
+
 
 format:
   html:

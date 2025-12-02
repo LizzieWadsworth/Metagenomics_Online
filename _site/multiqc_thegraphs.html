@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Make an account on Galaxy – Metagenomics_Online</title>
+<title>multiqc_thegraphs – Metagenomics_Online</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./copy_datasets.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./Why_preprocess.html" rel="next">
+<link href="./multiqc.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,9 +87,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html"><strong>Setting Up on Galaxy</strong></a></li><li class="breadcrumb-item"><a href="./about.html">Make an account on Galaxy</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"></h1>
+        </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -125,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link active">
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Make an account on Galaxy</span></a>
   </div>
 </li>
@@ -182,6 +185,53 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">MultiQC</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multiqc_thegraphs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">The MultiQC Graphs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>Preprocessing the reads</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Why_preprocess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why preprocess</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./CutAdapt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CutAdapt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./BBmerge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BBMerge</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FastQGroomer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FastQ Groomer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./QC_after_processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QC after processing</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -189,43 +239,127 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-multiqc-graphs" id="toc-the-multiqc-graphs" class="nav-link active" data-scroll-target="#the-multiqc-graphs">The MultiQC Graphs</a>
+  <ul class="collapse">
+  <li><a href="#general-statistics" id="toc-general-statistics" class="nav-link" data-scroll-target="#general-statistics">General Statistics</a></li>
+  <li><a href="#sequence-counts" id="toc-sequence-counts" class="nav-link" data-scroll-target="#sequence-counts">Sequence counts</a></li>
+  <li><a href="#fastqc-mean-quality-scores" id="toc-fastqc-mean-quality-scores" class="nav-link" data-scroll-target="#fastqc-mean-quality-scores">FastQC: Mean Quality Scores</a></li>
+  <li><a href="#overrepresented-sequences" id="toc-overrepresented-sequences" class="nav-link" data-scroll-target="#overrepresented-sequences">Overrepresented sequences</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html"><strong>Setting Up on Galaxy</strong></a></li><li class="breadcrumb-item"><a href="./about.html">Make an account on Galaxy</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Make an account on Galaxy</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="the-multiqc-graphs" class="level1">
+<h1>The MultiQC Graphs</h1>
+<p>The graphs for MultiQC are similar to those for FastQC but are combined for you reads. While we have paired reads, this will combine all forward reads and all reverse reads. We’ll do this again after we’ve merged the reads, which will give us one value for every sample.</p>
+<section id="general-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="general-statistics">General Statistics</h2>
+<p>MultiQC gives you a useful overview of your samples:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sample Name</th>
+<th>Dups</th>
+<th>GC</th>
+<th>Seqs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>forward</td>
+<td>98.1%</td>
+<td>54.0%</td>
+<td>0.1M</td>
+</tr>
+<tr class="even">
+<td>reverse</td>
+<td>98.1%</td>
+<td>53.0%</td>
+<td>0.1M</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sequence-counts" class="level2">
+<h2 class="anchored" data-anchor-id="sequence-counts">Sequence counts</h2>
+<p>A count of unique and duplicate reads. Because we’re looking at a PCR amplified genes, we expect lots of duplicates!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/galaxy_project_logo.jpg" class="img-fluid figure-img"></p>
-<figcaption>Galaxy Project Logo</figcaption>
+<p><a href="./images/fastqc_sequence_counts_plot.png" class="lightbox" data-gallery="my-gallery" title="Sequence counts: Unique and duplicated reads. Most reads will be duplicated as we’re looking at a gene amplified by PCR"><img src="./images/fastqc_sequence_counts_plot.png" class="img-fluid figure-img" alt="Sequence counts: Unique and duplicated reads. Most reads will be duplicated as we’re looking at a gene amplified by PCR"></a></p>
+<figcaption>Sequence counts: Unique and duplicated reads. Most reads will be duplicated as we’re looking at a gene amplified by PCR</figcaption>
 </figure>
 </div>
-<p>The first thing to do is to <a href="https://usegalaxy.org/register/start">go to the galaxy project</a> and make an account.</p>
-<p><em>Make a note of your Galaxy email address and password somewhere secure!</em></p>
-<p>The Galaxy project is a free web-based tool for running bioinformatics analyses.</p>
-<p>It runs on a <em>remote computer</em> which means you can run large jobs overnight and you don’t need to keep your own computer on, just check back later!</p>
+</section>
+<section id="fastqc-mean-quality-scores" class="level2">
+<h2 class="anchored" data-anchor-id="fastqc-mean-quality-scores">FastQC: Mean Quality Scores</h2>
+<p>Mean quality scores for the reads.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/fastqc_per_base_sequence_quality_plot.png" class="lightbox" data-gallery="my-gallery" title="Mean Quality Scores for the reads"><img src="./images/fastqc_per_base_sequence_quality_plot.png" class="img-fluid figure-img" alt="Mean Quality Scores for the reads"></a></p>
+<figcaption>Mean Quality Scores for the reads</figcaption>
+</figure>
+</div>
+</section>
+<section id="overrepresented-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="overrepresented-sequences">Overrepresented sequences</h2>
+<p>You’ll also get a table of overrepresented sequences. These are all part of the <strong><em>conserved region</em></strong> of the 16S rRNA gene so are in all of our samples!</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Overrepresented sequence</th>
+<th>Reports</th>
+<th>Occurrences</th>
+<th>% of all reads</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TGGGGAATATTGCACAATGGGGGAAACCCTGATGCAGCGACGCCGCGTGA</td>
+<td>1</td>
+<td>12710</td>
+<td>6.8571%</td>
+</tr>
+<tr class="even">
+<td>TGGGGAATATTGCACAATGGGCGCAAGCCTGATGCAGCGACGCCGCGTGC</td>
+<td>1</td>
+<td>8344</td>
+<td>4.5016%</td>
+</tr>
+<tr class="odd">
+<td>TGGGGAATATTGCACAATGGGGGAAACCCTGATGCAGCGACGCCGCGTGG</td>
+<td>1</td>
+<td>8176</td>
+<td>4.4110%</td>
+</tr>
+<tr class="even">
+<td>TGAGGAATATTGGTCAATGGGCGAGAGCCTGAACCAGCCAAGTAGCGTGC</td>
+<td>1</td>
+<td>4569</td>
+<td>2.4650%</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -630,17 +764,49 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Home">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      <a href="./multiqc.html" class="pagination-link" aria-label="MultiQC">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">MultiQC</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./copy_datasets.html" class="pagination-link" aria-label="Copy Datasets to your account">
-        <span class="nav-page-text">Copy Datasets to your account</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Why_preprocess.html" class="pagination-link" aria-label="Why preprocess">
+        <span class="nav-page-text">Why preprocess</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
