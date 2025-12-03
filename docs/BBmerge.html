@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./FastQGroomer.html" rel="next">
 <link href="./CutAdapt.html" rel="prev">
+<link href=".//images/bacteria_icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -270,6 +271,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Krona Pie Chart</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kronapiechart_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Krona pie chart: Viewing the results</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -294,6 +301,38 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="bbmerge" class="level1">
 <h1>BBMerge</h1>
+<p>BBMerge from BBTools will allow us to merge the forward and reverse reads. This will:</p>
+<ul>
+<li>Give us a longer read (~400 bp instead of 2 x 250 bp reads)</li>
+<li>Use the <strong>overlapping</strong> regions at the end of each read to select the highest quality base for each position</li>
+</ul>
+<p>This is because our sequence quality drops at the end of the reads - and it is the ends of the forward and reverse reads that overlap - so effectively we’ve sequenced the lower-quality part twice and can use the two readings to increase the overall quality of the reads.</p>
+<p><a href="https://microbenotes.com/paired-end-sequencing/">Read more here about paired-end reads here.</a></p>
+<p>To run BBMerge, go to Tools and type in “BBTools: BBMerge”, then select the options:</p>
+<ol type="1">
+<li>Choose the category of the files to be analyzed:
+<ul>
+<li>“Paired data”</li>
+</ul></li>
+<li>Collection of fastqsanger paired read files:
+<ul>
+<li>CutAdapt on Collection: Reads <em>This is your <strong>result</strong> from CutAdapt</em></li>
+</ul></li>
+</ol>
+<p>Leave the rest of the options as default, and click Run.</p>
+<p>The result will give you:</p>
+<ul>
+<li>BBTools: BBMerge on collection (unmerged reads) - all reads that <em>couldn’t</em> be merged, as they were too low quality</li>
+<li>BBTools: BBMerge on collection (merged reads) - this is the result we want, our merged reads.</li>
+<li>BBTools: BBMerge on collection (insert size histogram) - this is a table of values of final read length, which you could plot as a histogram in excel.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./GIFs/BBMerge.gif" class="img-fluid figure-img"></p>
+<figcaption>BBMerge from BBTools</figcaption>
+</figure>
+</div>
+<p>The merged reads don’t come out in quite the right format, so we then need to use FastQGroomer…</p>
 
 
 </section>

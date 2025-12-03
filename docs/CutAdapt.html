@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./BBmerge.html" rel="next">
 <link href="./Why_preprocess.html" rel="prev">
+<link href=".//images/bacteria_icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -270,6 +271,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Krona Pie Chart</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kronapiechart_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Krona pie chart: Viewing the results</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -294,6 +301,35 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="cutadapt" class="level1">
 <h1>CutAdapt</h1>
+<p>To run CutAdapt, go to Tools and Type in “CutAdapt”</p>
+<p>Then select these options:</p>
+<ol type="1">
+<li>Single-end or Paired-end reads?: Paired collection
+<ul>
+<li>Choose your collection of Downloaded sequences as the input.</li>
+</ul></li>
+<li>In “Other Read Trimming Options”
+<ul>
+<li>“Quality cutoff(s) (R1)”: 20</li>
+</ul></li>
+<li>In “Read Filtering Options”
+<ul>
+<li>“Minimum length (R1)”: 20</li>
+</ul></li>
+<li>In “Additional outputs to generate”: Report</li>
+</ol>
+<p>After CutAdapt has run, it will generate:</p>
+<ul>
+<li>CutAdapt Reads: The trimmed reads, which we will use in the next step</li>
+<li>CutAdapt Report: A report showing you how many reads were trimmed</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./GIFs/CutAdapt.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of setting up CutAdapt</figcaption>
+</figure>
+</div>
+<p>Now we’ve trimmed the reads, we can merge them…</p>
 
 
 </section>

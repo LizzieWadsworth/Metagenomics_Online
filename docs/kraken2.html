@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Bracken.html" rel="next">
 <link href="./Classifications_overview.html" rel="prev">
+<link href=".//images/bacteria_icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -270,6 +271,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Krona Pie Chart</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kronapiechart_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Krona pie chart: Viewing the results</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -294,6 +301,25 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="kraken2" class="level1">
 <h1>Kraken2</h1>
+<p>Type and select “Kraken2” from tools, and then:</p>
+<ol type="1">
+<li>Single or paired reads: Select “Single” (as they are now merged)</li>
+<li>Input sequences: Select collection (folder) and then “FastQ Groomer on collection”</li>
+<li>Print scientific names instead of just taxids: Yes</li>
+<li>Confidence: 0.1</li>
+<li>Create report:
+<ul>
+<li>Print a report with aggregate counts/clade to file: Yes</li>
+</ul></li>
+<li>Select a Kraken2 database: PlusPF (2021-05-17)</li>
+</ol>
+<p>Then run tool.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./GIFs/kraken2.gif" class="img-fluid figure-img"></p>
+<figcaption>Kraken2 output to file</figcaption>
+</figure>
+</div>
 
 
 </section>

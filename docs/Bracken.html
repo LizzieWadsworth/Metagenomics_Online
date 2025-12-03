@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Krakentools.html" rel="next">
 <link href="./kraken2.html" rel="prev">
+<link href=".//images/bacteria_icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -270,6 +271,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Krona Pie Chart</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kronapiechart_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Krona pie chart: Viewing the results</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -282,7 +289,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bracken" id="toc-bracken" class="nav-link active" data-scroll-target="#bracken">Bracken</a></li>
+  <li><a href="#bracken" id="toc-bracken" class="nav-link active" data-scroll-target="#bracken">Bracken</a>
+  <ul class="collapse">
+  <li><a href="#braken-report" id="toc-braken-report" class="nav-link" data-scroll-target="#braken-report">Braken report</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -294,8 +304,77 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="bracken" class="level1">
 <h1>Bracken</h1>
+<p>Bracken will extract the species abundances from kraken2 output.</p>
+<p>Select “Bracken” from tools:</p>
+<ol type="1">
+<li>Kraken report file: Kraken2 on collection: Report</li>
+<li>Select a Kmer distribution: PlusPF (2021-05-17)</li>
+<li>Level: Species</li>
+<li>Produce Kraken-Style Bracken report: Yes</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/bracken_setup_options.png" class="img-fluid figure-img"></p>
+<figcaption>Bracken setup options</figcaption>
+</figure>
+</div>
+<section id="braken-report" class="level2">
+<h2 class="anchored" data-anchor-id="braken-report">Braken report</h2>
+<p>Bracken will generate a report with the abundances of some of the species in the sample:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>name</th>
+<th>taxonomy_id</th>
+<th>taxonomy_lvl</th>
+<th>kraken_assigned_reads</th>
+<th>added_reads</th>
+<th>new_est_reads</th>
+<th>fraction_total_reads</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anaerostipes hadrus</td>
+<td>649756</td>
+<td>S</td>
+<td>2844</td>
+<td>2017</td>
+<td>4861</td>
+<td>0.07864</td>
+</tr>
+<tr class="even">
+<td>Coprococcus sp. ART55/1</td>
+<td>751585</td>
+<td>S</td>
+<td>2113</td>
+<td>1087</td>
+<td>3200</td>
+<td>0.05177</td>
+</tr>
+<tr class="odd">
+<td>Coprococcus comes</td>
+<td>410072</td>
+<td>S</td>
+<td>189</td>
+<td>326</td>
+<td>515</td>
+<td>0.00833</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -15,7 +15,7 @@
     "href": "Krakentools.html",
     "title": "Krakentools",
     "section": "",
-    "text": "Krakentools",
+    "text": "Krakentools\nSelect the tool: Krakentools: Convert kraken report file to krona text file\nMake sure you click the “to krona text file” version as there are a few!\n\nKraken report file: Kraken2 on collection: Report\n\nAll other options you can leave as default.\n\n\n\nKrakentools options",
     "crumbs": [
       "**Classifying Taxonomy**",
       "Krakentools"
@@ -37,7 +37,7 @@
     "href": "BBmerge.html",
     "title": "BBMerge",
     "section": "",
-    "text": "BBMerge",
+    "text": "BBMerge\nBBMerge from BBTools will allow us to merge the forward and reverse reads. This will:\n\nGive us a longer read (~400 bp instead of 2 x 250 bp reads)\nUse the overlapping regions at the end of each read to select the highest quality base for each position\n\nThis is because our sequence quality drops at the end of the reads - and it is the ends of the forward and reverse reads that overlap - so effectively we’ve sequenced the lower-quality part twice and can use the two readings to increase the overall quality of the reads.\nRead more here about paired-end reads here.\nTo run BBMerge, go to Tools and type in “BBTools: BBMerge”, then select the options:\n\nChoose the category of the files to be analyzed:\n\n“Paired data”\n\nCollection of fastqsanger paired read files:\n\nCutAdapt on Collection: Reads This is your result from CutAdapt\n\n\nLeave the rest of the options as default, and click Run.\nThe result will give you:\n\nBBTools: BBMerge on collection (unmerged reads) - all reads that couldn’t be merged, as they were too low quality\nBBTools: BBMerge on collection (merged reads) - this is the result we want, our merged reads.\nBBTools: BBMerge on collection (insert size histogram) - this is a table of values of final read length, which you could plot as a histogram in excel.\n\n\n\n\nBBMerge from BBTools\n\n\nThe merged reads don’t come out in quite the right format, so we then need to use FastQGroomer…",
     "crumbs": [
       "**Preprocessing the reads**",
       "BBMerge"
@@ -48,7 +48,7 @@
     "href": "CutAdapt.html",
     "title": "CutAdapt",
     "section": "",
-    "text": "CutAdapt",
+    "text": "CutAdapt\nTo run CutAdapt, go to Tools and Type in “CutAdapt”\nThen select these options:\n\nSingle-end or Paired-end reads?: Paired collection\n\nChoose your collection of Downloaded sequences as the input.\n\nIn “Other Read Trimming Options”\n\n“Quality cutoff(s) (R1)”: 20\n\nIn “Read Filtering Options”\n\n“Minimum length (R1)”: 20\n\nIn “Additional outputs to generate”: Report\n\nAfter CutAdapt has run, it will generate:\n\nCutAdapt Reads: The trimmed reads, which we will use in the next step\nCutAdapt Report: A report showing you how many reads were trimmed\n\n\n\n\nGIF of setting up CutAdapt\n\n\nNow we’ve trimmed the reads, we can merge them…",
     "crumbs": [
       "**Preprocessing the reads**",
       "CutAdapt"
@@ -59,7 +59,18 @@
     "href": "Bracken.html",
     "title": "Bracken",
     "section": "",
-    "text": "Bracken",
+    "text": "Bracken will extract the species abundances from kraken2 output.\nSelect “Bracken” from tools:\n\nKraken report file: Kraken2 on collection: Report\nSelect a Kmer distribution: PlusPF (2021-05-17)\nLevel: Species\nProduce Kraken-Style Bracken report: Yes\n\n\n\n\nBracken setup options\n\n\n\n\nBracken will generate a report with the abundances of some of the species in the sample:\n\n\n\n\n\n\n\n\n\n\n\n\nname\ntaxonomy_id\ntaxonomy_lvl\nkraken_assigned_reads\nadded_reads\nnew_est_reads\nfraction_total_reads\n\n\n\n\nAnaerostipes hadrus\n649756\nS\n2844\n2017\n4861\n0.07864\n\n\nCoprococcus sp. ART55/1\n751585\nS\n2113\n1087\n3200\n0.05177\n\n\nCoprococcus comes\n410072\nS\n189\n326\n515\n0.00833",
+    "crumbs": [
+      "**Classifying Taxonomy**",
+      "Bracken"
+    ]
+  },
+  {
+    "objectID": "Bracken.html#braken-report",
+    "href": "Bracken.html#braken-report",
+    "title": "Bracken",
+    "section": "",
+    "text": "Bracken will generate a report with the abundances of some of the species in the sample:\n\n\n\n\n\n\n\n\n\n\n\n\nname\ntaxonomy_id\ntaxonomy_lvl\nkraken_assigned_reads\nadded_reads\nnew_est_reads\nfraction_total_reads\n\n\n\n\nAnaerostipes hadrus\n649756\nS\n2844\n2017\n4861\n0.07864\n\n\nCoprococcus sp. ART55/1\n751585\nS\n2113\n1087\n3200\n0.05177\n\n\nCoprococcus comes\n410072\nS\n189\n326\n515\n0.00833",
     "crumbs": [
       "**Classifying Taxonomy**",
       "Bracken"
@@ -131,14 +142,36 @@
     ]
   },
   {
-    "objectID": "fastqc_results.html",
-    "href": "fastqc_results.html",
-    "title": "View FastQC results",
+    "objectID": "FastQGroomer.html",
+    "href": "FastQGroomer.html",
+    "title": "FastQ Groomer",
     "section": "",
-    "text": "View FastQC results\nNow FastQC has run, you can inspect the results.\nIt gives you two results - Raw Data and Website. You’ll want to look at the Website results.\nYou can click the results for each read pair by clicking the “eye” icon.\n\n\n\nView FastQC GIF\n\n\nHowever, this is a lot of graphs! We can use MultiQC to combine them.",
+    "text": "FastQ Groomer\nFollowing BBMerge, we need to reformat the reads using FastQ Groomer.\nFrom Tools, type in and select “FastQ Groomer”\nUnder “File to Groom”, select collection (folder) option: - Select your BBTools: BBMerge on collection (merged reads)\nMake sure you’ve chosen the merged and not the unmerged reads.\nKeep everything else as default, and then click Run.\n\n\n\nFastQ Groomer",
     "crumbs": [
-      "**Quality Control**",
-      "View FastQC results"
+      "**Preprocessing the reads**",
+      "FastQ Groomer"
+    ]
+  },
+  {
+    "objectID": "kraken2.html",
+    "href": "kraken2.html",
+    "title": "Kraken2",
+    "section": "",
+    "text": "Kraken2\nType and select “Kraken2” from tools, and then:\n\nSingle or paired reads: Select “Single” (as they are now merged)\nInput sequences: Select collection (folder) and then “FastQ Groomer on collection”\nPrint scientific names instead of just taxids: Yes\nConfidence: 0.1\nCreate report:\n\nPrint a report with aggregate counts/clade to file: Yes\n\nSelect a Kraken2 database: PlusPF (2021-05-17)\n\nThen run tool.\n\n\n\nKraken2 output to file",
+    "crumbs": [
+      "**Classifying Taxonomy**",
+      "Kraken2"
+    ]
+  },
+  {
+    "objectID": "KronaPieChart.html",
+    "href": "KronaPieChart.html",
+    "title": "Krona Pie Chart",
+    "section": "",
+    "text": "Krona Pie Chart\nNow we’re going to visualise our results.\nFrom Tools select “Krona pie chart”:\n\nType of input data: Tabular\nInput file: Krakentools: Convert kraken report on collection\nProvide a name for the basal rank: Bacteria\n\nAnd select run.\n\n\n\nKrona pie chart setup",
+    "crumbs": [
+      "**Classifying Taxonomy**",
+      "Krona Pie Chart"
     ]
   },
   {
@@ -153,36 +186,25 @@
     ]
   },
   {
-    "objectID": "KronaPieChart.html",
-    "href": "KronaPieChart.html",
-    "title": "Krona Pie Chart",
+    "objectID": "fastqc_results.html",
+    "href": "fastqc_results.html",
+    "title": "View FastQC results",
     "section": "",
-    "text": "Krona Pie Chart",
+    "text": "View FastQC results\nNow FastQC has run, you can inspect the results.\nIt gives you two results - Raw Data and Website. You’ll want to look at the Website results.\nYou can click the results for each read pair by clicking the “eye” icon.\n\n\n\nView FastQC GIF\n\n\nHowever, this is a lot of graphs! We can use MultiQC to combine them.",
     "crumbs": [
-      "**Classifying Taxonomy**",
-      "Krona Pie Chart"
+      "**Quality Control**",
+      "View FastQC results"
     ]
   },
   {
-    "objectID": "kraken2.html",
-    "href": "kraken2.html",
-    "title": "Kraken2",
+    "objectID": "kronapiechart_results.html",
+    "href": "kronapiechart_results.html",
+    "title": "Krona pie chart: Viewing the results",
     "section": "",
-    "text": "Kraken2",
+    "text": "Krona pie chart: Viewing the results\nKrona pie charts are interactive which means you can click between your different samples in the top left hand corner to compare them. You can also click onto one group to zoom into just that group.\nYou’ll notice the named labels start with a letter:\n\nk_ Kingdom (Bacteria)\np_ Phylum\nc_ Class\no_ Order\nf_ Family\ng_ Genus\ns_ Species\n\nThere is also a snapshot button to download each image.\nFrom here you can compare your samples - can you find any patterns? What could this mean, can you search for those groups and species in the literature?\n\n\n\nKrona Pie Chart Interactive Graph",
     "crumbs": [
       "**Classifying Taxonomy**",
-      "Kraken2"
-    ]
-  },
-  {
-    "objectID": "FastQGroomer.html",
-    "href": "FastQGroomer.html",
-    "title": "FastQ Groomer",
-    "section": "",
-    "text": "FastQ Groomer",
-    "crumbs": [
-      "**Preprocessing the reads**",
-      "FastQ Groomer"
+      "Krona pie chart: Viewing the results"
     ]
   },
   {
@@ -245,7 +267,29 @@
     "href": "QC_after_processing.html",
     "title": "QC after processing",
     "section": "",
-    "text": "QC after processing",
+    "text": "Now we’ve done our preprocessing steps, we can redo the FastQC and MultiQC quality checks to see how our final read qualities are.\n\n\nFor FastQC, use the the result from FastQGroomer as input.\n\n\n\nInput the results from FastQGroomer to FastQC\n\n\nFor MultiQC, select “FastQC”, and then use select the FastQC on collection: RawData as input.\n\n\n\nInput the results from FastQC to MultiQC\n\n\n\n\n\nYou should get similar outputs that you did previously, but you should notice the reads are longer and the sequence quality remains high.\n\n\n\nMultiQC output after processing steps showing 400bp high quality reads",
+    "crumbs": [
+      "**Preprocessing the reads**",
+      "QC after processing"
+    ]
+  },
+  {
+    "objectID": "QC_after_processing.html#what-to-use-for-inputs",
+    "href": "QC_after_processing.html#what-to-use-for-inputs",
+    "title": "QC after processing",
+    "section": "",
+    "text": "For FastQC, use the the result from FastQGroomer as input.\n\n\n\nInput the results from FastQGroomer to FastQC\n\n\nFor MultiQC, select “FastQC”, and then use select the FastQC on collection: RawData as input.\n\n\n\nInput the results from FastQC to MultiQC",
+    "crumbs": [
+      "**Preprocessing the reads**",
+      "QC after processing"
+    ]
+  },
+  {
+    "objectID": "QC_after_processing.html#outputs",
+    "href": "QC_after_processing.html#outputs",
+    "title": "QC after processing",
+    "section": "",
+    "text": "You should get similar outputs that you did previously, but you should notice the reads are longer and the sequence quality remains high.\n\n\n\nMultiQC output after processing steps showing 400bp high quality reads",
     "crumbs": [
       "**Preprocessing the reads**",
       "QC after processing"
@@ -267,7 +311,7 @@
     "href": "Classifications_overview.html",
     "title": "Classification Overview",
     "section": "",
-    "text": "Classification Overview",
+    "text": "Classification Overview\nNow we have our reads, we’re going to compare them to known bacterial 16S rRNA sequences and determine the phylogenetic groups.\nFor some species, we will have a unique read that can give us the exact species in the sample.\nHowever, for other species we might only be able to identify the genus as there might not be enough differences between species to uniquely identify them.\nFor some reads we won’t be able to classify them at all - uncategorised reads - because they isn’t enough known about these and so their sequences are not in the databases!\nWe’re going to use a few tools in our classification:\n\nKraken2 to compare our reads to a database of known sequences and output the proportions of reads belonging to each species or taxonomic group\nBraken to extract some of the species level output of Kraken2\nKrakentools to reformat the result from Kraken2 for Krona\nKrona to generate an interactive Krona Pie Chart to visualise our data\n\n\n\n\nKraken2 output to file",
     "crumbs": [
       "**Classifying Taxonomy**",
       "Classification Overview"
@@ -278,7 +322,7 @@
     "href": "Why_preprocess.html",
     "title": "Why preprocess",
     "section": "",
-    "text": "Why preprocess",
+    "text": "Why preprocess\nThe reads we have downloaded from the Sequence Nucleotide Archive or European Nucleotide Database are the raw results that have come out of the sequencing machine.\nWe need to process these reads to do a few things:\n\nCutAdapt: Remove any sequencing adapters from our reads\nCutAdapt: Trim low quality reads with CutAdapt, to remove possible sequencing errors.\nBBMerge: Merge our forward and reverse reads, to get one longer (and higher quality) read.\nFastQGroomer: Reformat the result from BBMerge to something we can use\nQC after processing: Rerun FastQC and MultiQC to get our quality after these processing steps.",
     "crumbs": [
       "**Preprocessing the reads**",
       "Why preprocess"

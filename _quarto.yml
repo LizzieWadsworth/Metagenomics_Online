@@ -6,6 +6,7 @@ website:
   title: "Metagenomics_Online"
   page-navigation: true
   bread-crumbs: false  
+  favicon: /images/bacteria_icon.png
   sidebar:
     contents:
       - href: index.qmd
@@ -37,6 +38,7 @@ website:
           - href: Bracken.qmd
           - href: Krakentools.qmd
           - href: KronaPieChart.qmd
+          - href: kronapiechart_results.qmd
 
 
 format:
