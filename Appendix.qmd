@@ -1,0 +1,17 @@
+# Appendix 
+
+To add your Galaxy data to the appendix of your report, you can share the entire history with us. 
+
+First, click the three horizontal lines in the top right corner: 
+
+![Click horizontal bars](/images/Galaxy_shareurl_1.png)
+
+Next, click "Share and manage access":
+
+![Click Share and manage access](/images/Galaxy_shareurl_2.png)
+
+Finally, click the "Make history accessible" button. After a few minutes, a url link will appear. **Copy and paste this link into your appendix** 
+
+![Click Share and manage access](/images/Galaxy_shareurl_3.png)
+
+

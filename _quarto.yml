@@ -39,6 +39,7 @@ website:
           - href: Krakentools.qmd
           - href: KronaPieChart.qmd
           - href: kronapiechart_results.qmd
+          - href: Appendix.qmd
 
 
 format:
