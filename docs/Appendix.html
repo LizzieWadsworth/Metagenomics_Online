@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -307,25 +310,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
 <p>To add your Galaxy data to the appendix of your report, you can share the entire history with us.</p>
-<p>First, click the three horizontal lines in the top right corner:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/Galaxy_shareurl_1.png" class="img-fluid figure-img"></p>
-<figcaption>Click horizontal bars</figcaption>
-</figure>
-</div>
+<p>First, click the three horizontal lines in the top right corner.</p>
 <p>Next, click “Share and manage access”:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/Galaxy_shareurl_2.png" class="img-fluid figure-img"></p>
-<figcaption>Click Share and manage access</figcaption>
-</figure>
-</div>
 <p>Finally, click the “Make history accessible” button. After a few minutes, a url link will appear. <strong>Copy and paste this link into your appendix</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/Galaxy_shareurl_3.png" class="img-fluid figure-img"></p>
-<figcaption>Click Share and manage access</figcaption>
+<p><a href="GIFs/MakeHistoryAccessible.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="GIF of making history accessible link"><img src="GIFs/MakeHistoryAccessible.gif" class="img-fluid figure-img" alt="GIF of making history accessible link"></a></p>
+<figcaption>GIF of making history accessible link</figcaption>
 </figure>
 </div>
 
@@ -743,6 +734,38 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
